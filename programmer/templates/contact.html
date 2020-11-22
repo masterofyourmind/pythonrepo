@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Contacts
+{% endblock title %}
+{% block body %}
+<div class="container-fluid  px-0">
+
+  <img src="{% static 'img/contact-us-crousal.jpg' %}" class="d-block w-100" alt="loading..." style=" height:450px; ">
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+      <div class="sidebar-sticky">
+        <ul class="nav flex-column">
+          <h3>Hello inside ul </h3>
+        </ul>
+      </div>
+    </nav>
+
+    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+      <div class="chartjs-size-monitor"
+        style="position: absolute; left: 0px; top: 0px; right: 0px; bottom: 0px; overflow: hidden; pointer-events: none; visibility: hidden; z-index: -1;">
+        <div class="chartjs-size-monitor-expand"
+          style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+          <div style="position:absolute;width:1000000px;height:1000000px;left:0;top:0"></div>
+        </div>
+        <div class="chartjs-size-monitor-shrink"
+          style="position:absolute;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1;">
+          <div style="position:absolute;width:200%;height:200%;left:0; top:0"></div>
+        </div>
+      </div>
+
+      <div class="container">
+        <h3 class="text-center" style="color: white;">Contact Us</h3>
+
+        <form method="post" action="/contact">
+          {% csrf_token %}
+          <div class="form-group">
+            <label class="con-chartext" for="exampleFormControlInput1">Name</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required>
+          </div>
+
+          <div class="form-group">
+            <label class="con-chartext" for="exampleFormControlInput1">Email</label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="enter your email" required>
+          </div>
+
+          <div class="form-group">
+            <label class="con-chartext" for="exampleFormControlInput1">Phone</label>
+            <input type="phone" class="form-control" id="phone" name="phone" placeholder="enter your phone number" required>
+          </div>
+
+          <div class="form-group">
+            <label class="con-chartext" for="exampleFormControlTextarea1">Tell me why you want to contact me</label>
+            <textarea class="form-control" id="desc" name="desc" rows="3" required></textarea>
+          </div>
+
+          <button class="btn-primary" type="submit" name="submit">Submit</button>
+        </form>
+      </div>
+    </main>
+  </div>
+</div>
+
+<footer class="pt-4 my-md-5 pt-md-5 border-top footer-bot" style="margin-top: 15px;">
+    <div class="row">
+        <div class="col-12 col-md">
+            <img class="mb-2" src="{% static 'img/web-logo-full.png' %}" alt="" width="54" height="54">
+            <small class="d-block mb-3 text-muted">© 2017-2020 by Shobhit Ranjan</small>
+        </div>
+        <div class="col-6 col-md">
+            <h5 style="color: white;">Features</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="#">Cool stuff</a></li>
+                <li><a class="text-muted" href="#">Random feature</a></li>
+                <li><a class="text-muted" href="#">Team feature</a></li>
+                <li><a class="text-muted" href="#">Stuff for developers</a></li>
+                <li><a class="text-muted" href="#">Another one</a></li>
+                <li><a class="text-muted" href="#">Last time</a></li>
+            </ul>
+        </div>
+        <div class="col-6 col-md">
+            <h5 style="color: white;">Resources</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="#">Resource</a></li>
+                <li><a class="text-muted" href="#">Resource name</a></li>
+                <li><a class="text-muted" href="#">Another resource</a></li>
+                <li><a class="text-muted" href="#">Final resource</a></li>
+            </ul>
+        </div>
+        <div class="col-6 col-md">
+            <h5 style="color: white;">About</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="#">Team</a></li>
+                <li><a class="text-muted" href="#">Locations</a></li>
+                <li><a class="text-muted" href="#">Privacy</a></li>
+                <li><a class="text-muted" href="#">Terms</a></li>
+            </ul>
+        </div>
+        <div>
+          <ul class="list-unstyled d-flex">
+            <li>
+              <a class="mr-4" role="button"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li>
+              <a class="mr-4" role="button"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li>
+              <a class="mr-4" role="button"><i class="fa fa-instagram"></i></a>
+            </li>
+            <li>
+              <a class="mr-4" role="button"><i class="fa fa-youtube"></i></a>
+            </li>
+          </ul>
+        </div>
+    </div>
+</footer>
+{% endblock body %}

@@ -1,0 +1,316 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+home
+{% endblock title %}
+{% block body %}
+
+
+<!-- Crousel -->
+<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="{% static 'img/background-image-thre.png' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>First slide label</h5>
+                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'img/background-image-one.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Second slide label</h5>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+        <div class="carousel-item">
+            <img src="{% static 'img/background-image-two.jpg' %}" class="d-block w-100" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h5>Third slide label</h5>
+                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Crousal -->
+
+<div class="row ml-2">
+    <div class="col-md-4">
+        <div class="card my-card">
+            <img src="{% static 'img/creators.png' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Basic Python</h5>
+                <p class="card-text">This course include basic concept of python which can help you to understand....
+                </p>
+                <a type="button" class="btn btn-primary card-button" data-toggle="modal"
+                    title="Read more about the details that you need to know before you register"
+                    data-target="#exampleModalone">
+                    click here
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card my-card">
+            <img src="{% static 'img/creators.png' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a type="button" class="btn btn-primary card-button" data-target="#exampleModaltwo" data-toggle="modal"
+                    title="Read more about the details that you need to know before you register">
+                    click here
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="card my-card">
+            <img src="{% static 'img/creators.png' %}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the
+                    card's content.</p>
+                <a type="button" class="btn btn-primary card-button" data-toggle="modal"
+                    title="Read more about the details that you need to know before you register"
+                    data-target="#exampleModalthree">
+                    click here
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Button trigger modal -->
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalone" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Hello you are here lorem is not just a normal snippet—it’s actually a generator. Every time you
+                expand it, it will generate a 30-words dummy text, splitted into a few sentences.lorem is not just a
+                normal snippet—it’s actually a generator. Every time you expand it, it will generate a 30-words
+                dummy text, splitted into a few sentences.lorem is not just a normal snippet—it’s actually a
+                generator. Every time you expand it, it will generate a 30-words dummy text, splitted into a few
+                sentences.lorem is not just a normal snippet—it’s actually a generator. Every time you expand it, it
+                will generate a 30-words dummy text, splitted into a few sentences.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModaltwo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam minima ab optio eum qui eveniet
+                blanditiis minus voluptatum et accusamus, rerum perferendis sint voluptates sed? Perspiciatis nemo nihil
+                ipsum dolores.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="exampleModalthree" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae ipsum tenetur accusamus facilis
+                error debitis, consequuntur corrupti esse nihil. Eum dolor architecto nemo natus dolores quae rerum
+                magni fugit nostrum.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Jumbotron -->
+<div class="jumbotron">
+    <h1 class="display-4">Hello, Smart Peoples</h1>
+    <p class="lead">This is creative group, we mainly focus on the creative solutions and that we are going to test
+        by your logical skills.</p>
+    <hr class="my-4">
+    <p>We organise competition every month, if you have any quiery related to competition message us directly. Lorem
+        ipsum dolor sit amet consectetur, adipisicing elit. Voluptatibus nihil illum ipsum sequi suscipit magnam
+        consequatur vero, harum maxime placeat deserunt neque commodi eveniet unde veniam fugiat, assumenda odit
+        perspiciatis voluptatem necessitatibus error saepe quidem iure! Laboriosam inventore enim quaerat nostrum
+        nam maxime, minima dolor, dignissimos quisquam unde facilis iure!</p>
+    <a type="button" class="btn btn-primary card-button" title="Contact Us for further help" href="/contact">
+        Contact Us
+    </a>
+</div>
+<!-- End JumboTron-->
+
+<!-- Another Detail -->
+<div class="row">
+    {% for post in allPosts %}
+    <div class="col-md-6">
+        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative"
+            style="background-color: #dcdcdc;">
+            <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-primary">Blog</strong>
+                <h3 class="mb-0">{{post.blogtitle}}</h3>
+                <div class="mb-1 text-muted">Nov 12</div>
+                <p class="card-text mb-auto">{{post.descri}}</p>
+                <a href="{{ post.slug }}" class="stretched-link">Continue reading</a>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+                <svg class="bd-placeholder-img" width="200" height="284">
+                    <image href="{{ post.image.url }}" />
+                </svg>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+
+</div>
+
+<!-- Message box  -->
+
+<div class="my-3 p-3 bg-white rounded shadow-sm messagebox-index">
+    <h6 class="border-bottom border-gray pb-2 mb-0">Recent Updates</h6>
+    <div class="media text-muted pt-3">
+        <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" preserveAspectRatio="xMidYMid slice"
+            focusable="false" role="img" aria-label="Placeholder: 32x32">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff"
+                dy=".3em">32x32</text>
+        </svg>
+        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+            <strong class="d-block text-gray-dark">@Vihan</strong>
+            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+            condimentum nibh, ut fermentum massa justo sit amet risus.
+        </p>
+    </div>
+    <div class="media text-muted pt-3">
+        <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" preserveAspectRatio="xMidYMid slice"
+            focusable="false" role="img" aria-label="Placeholder: 32x32">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#e83e8c"></rect><text x="50%" y="50%" fill="#e83e8c"
+                dy=".3em">32x32</text>
+        </svg>
+        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+            <strong class="d-block text-gray-dark">@Rohan Das</strong>
+            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+            condimentum nibh, ut fermentum massa justo sit amet risus.
+        </p>
+    </div>
+    <div class="media text-muted pt-3">
+        <svg class="bd-placeholder-img mr-2 rounded" width="32" height="32" preserveAspectRatio="xMidYMid slice"
+            focusable="false" role="img" aria-label="Placeholder: 32x32">
+            <title>Placeholder</title>
+            <rect width="100%" height="100%" fill="#6f42c1"></rect><text x="50%" y="50%" fill="#6f42c1"
+                dy=".3em">32x32</text>
+        </svg>
+        <p class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray">
+            <strong class="d-block text-gray-dark">@Samriddhi</strong>
+            Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+            condimentum nibh, ut fermentum massa justo sit amet risus.
+        </p>
+    </div>
+    <small class="d-block text-right mt-3">
+
+    </small>
+</div>
+
+<!-- End Message Box -->
+<!-- End Another Detail  -->
+<footer class="pt-4 my-md-5 pt-md-5 border-top footer-bot">
+    <div class="row">
+        <!-- Footer -->
+        <div class="col-12 col-md">
+            <img class="mb-2" src="{% static 'img/my-logo.jpeg' %}" alt="" width="54" height="54">
+            <small class="d-block mb-3 text-muted">© 2017-2020 by Shobhit Ranjan</small>
+        </div>
+        <!-- footer image -->
+
+
+
+        <div class="col-6 col-md">
+            <h5 style="color: white;">Features</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="#">Cool stuff</a></li>
+                <li><a class="text-muted" href="#">Random feature</a></li>
+                <li><a class="text-muted" href="#">Team feature</a></li>
+                <li><a class="text-muted" href="#">Stuff for developers</a></li>
+                <li><a class="text-muted" href="#">Another one</a></li>
+                <li><a class="text-muted" href="#">Last time</a></li>
+            </ul>
+        </div>
+        <div class="col-6 col-md">
+            <h5 style="color: white;">Resources</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="#">Resource</a></li>
+                <li><a class="text-muted" href="#">Resource name</a></li>
+                <li><a class="text-muted" href="#">Another resource</a></li>
+                <li><a class="text-muted" href="#">Final resource</a></li>
+            </ul>
+        </div>
+        <div class="col-6 col-md">
+            <h5 style="color: white;">About</h5>
+            <ul class="list-unstyled text-small">
+                <li><a class="text-muted" href="about">Teams</a></li>
+                <li><a class="text-muted">Location:</a></li>
+                <li><a class="text-muted">SVIET Ramnagar Banur Punjab - 140601</a></li>
+            </ul>
+        </div>
+        <div>
+            <ul class="list-unstyled d-flex mb-0">
+                <li>
+                    <a class="mr-4"><i class="fa fa-facebook"></i></a>
+                </li>
+                <li>
+                    <a class="mr-4"><i class="fa fa-twitter"></i></a>
+                </li>
+                <li>
+                    <a class="mr-4"><i class="fa fa-instagram"></i></a>
+                </li>
+                <li>
+                    <a class="mr-4"><i class="fa fa-youtube"></i></a>
+                </li>
+            </ul>
+
+        </div>
+        <!--<div class="col-12 col-md">
+            <img class="mb-2" src="{% static 'img/my-logo.jpeg' %}" alt="" width="54" height="54">
+            <small class="d-block mb-3 text-muted">© 2017-2020 by Shobhit Ranjan</small>
+        </div>-->
+    </div>
+</footer>
+{% endblock body %}
+<!--role="button"
+role="button"
+role="button"
+role="button"-->

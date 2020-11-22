@@ -1,0 +1,154 @@
+body{
+    background-color: #292929;
+    /* rgb(197 190 255); */
+}
+
+.dropdown-menu:hover{
+    background-color: #a5cff8;
+}
+
+.navbar {
+    border-radius: 15px;
+}
+.nav-drop a:hover {
+    color: red;
+}
+.carousel .carousel-inner{
+    height:500px
+    }
+.carousel-inner .carousel-item img{
+    height: 450px;
+    /* //prevent it from stretch in screen size < than 768px */
+    object-fit: unset;
+}
+.d-md-block {
+    color: black;
+    border-radius: 65px;
+}
+.bg-light {
+    background-color: #292929!important;  
+    /* #a5cff8!important;    */
+}
+#firstsl-ide{
+    font-size: 1.25rem;
+    color: yellowgreen;
+}
+#firstpa-ra {
+    color: #9facb6;
+}
+.afternav{
+    padding: 45px;
+}
+.my-card {
+    margin-right: 10px;
+    margin-bottom: 53px;
+}
+.card-button {
+    border-radius: 7px;
+    background-color: rgb(157, 163, 245);
+}
+.downcard-one {
+    background-color: red;
+}
+.bars-data {
+    height: 100px;
+    margin: 12px;
+}
+.container {
+    padding-top: 56px;
+    padding-right: 0px;
+    padding-left: 0px;
+}
+.messagebox-index {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.row {
+    margin-left: -3px;
+    margin-right: -3px;
+}
+.jumbotron {
+    margin-left: 11px;
+    margin-right: 11px;
+}
+.footer-bot {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 0px;
+}
+
+/* The sidebar menu */
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: #f1f1f1;
+  }
+  
+  /* Style page content */
+  .main {
+    margin-left: 160px; /* Same as the width of the sidebar */
+    padding: 0px 10px;
+  }
+  
+  /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+  @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+  }
+
+/*Blog-Detail.html*/
+.blog-pagination-view {
+    margin-top: 20px;
+}
+/*End Blog-Detail.html*/
+/*Contact page*/
+.con-chartext{
+    color: #b3aca6;
+}
+/*Contact page*/
+/*Colors*/
+.col-white{
+    color: white;
+}
+/*End colors*/
+/*Error*/
+.error{
+    color: red;
+}
+.warning{
+    color: yellow;
+}
+.success{
+    color: green;
+}
+/* Team Details */
+.card-control{
+    width: 48%;
+}
+.card-control-two{
+    margin-left: 15px;
+}
+.card-all-image{
+    height: 100%;
+    width: 100%;
+}

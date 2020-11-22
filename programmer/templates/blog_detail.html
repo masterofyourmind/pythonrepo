@@ -1,0 +1,206 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load extras %}
+{% block title %}
+home
+{% endblock title %}
+{% block body %}
+
+<main role="main" class="container">
+  <div class="row">
+    <img src="{{ post.image.url }}" class="d-block w-100" alt="..." style="margin-top: -56px; height:32em;">
+    <div class="col-md-8 blog-main">
+      <h3 class="pb-4 mb-4 font-italic border-bottom" style="margin-top: 5px; color: #dcdcdc;">
+        Blog
+      </h3>
+
+      <div class="blog-post" style="color: #dcdcdc;">
+        <h2 class="blog-post-title" style="color: #dcdcdc">{{post.blogtitle}}</h2>
+        <p class="blog-post-meta" style="color: #dcdcdc;">{{post.timestamp|truncatechars:12}} by <a
+            href="#">{{post.author}}</a></p>
+        <hr>
+        {{post.body|safe}}
+
+      </div><!-- /.blog-post -->
+
+      <form>
+        <script src="https://checkout.razorpay.com/v1/payment-button.js"
+          data-payment_button_id="pl_G2x2V1dRPY5Jju"> </script>
+      </form>
+      
+      <nav class="blog-pagination-view">
+        <a class="btn btn-outline-primary" href="/">Back</a>
+      </nav>
+
+      <!-- COMMENT PANNEL -->
+      <div class="my-3 p-3 bg-white rounded shadow-sm messagebox-index mx-0">
+        <h6 class="border-bottom border-gray pb-2 mb-0">Comments: {{comments.count}}</h6>
+        {% for comment in comments %}
+        <div class="media text-muted pt-3">
+          <img style="width: 33px;" src="static/img/user.png" alt="">
+          <div class="media-body pb-3 mb-0 small lh-125 border-bottom border-gray mx-3">
+            <strong class="d-block text-gray-dark">{{comment.user.username}} --- {{comment.timestamp}}</strong>
+            <text type="text">{{comment.comment|truncatechars:201}}</text>
+
+            <!-- COMMENT PARENT REPLY SECTION -->
+            <div class="reply my-2">
+              {% if user.is_authenticated %}
+              <button class="btn btn-primary card-button my-2" type="button" data-toggle="collapse"
+                data-target="#replyBox{{comment.sno}}" aria-expanded="false" aria-controls="replyBox{{comment.sno}}">
+                Reply
+              </button>
+              {% else %}
+              <button class="btn btn-primary" type="button" data-toggle="collapse" aria-expanded="false" disabled>
+                Login to reply
+              </button>
+              {% endif %}
+
+              <div class="collapse" id="replyBox{{comment.sno}}">
+                <div class="card card-body my-2">
+                  <form action="postComment" method="post">
+                    {% csrf_token %}
+                    <div>
+                      <label form="comment">Post Reply</label>
+                      <input type="text" class="form-control" name="comment" placeholder="Not more than 200 chars"
+                        important>
+                      <input type="hidden" name="parentSno" value="{{comment.sno}}">
+                    </div>
+                    <input type="hidden" name="postSno" value="{{post.sno}}">
+                    <input class="btn btn-primary card-button my-2" type="submit" value="submit">
+                  </form>
+                </div>
+              </div>
+              <div class="my-3 p-3 bg-white rounded shadow-sm messagebox-index mx-0 my-2">
+                {% for reply in replyDict|get_val:comment.sno %}
+                <div class="row">
+                  <div class="media text-muted pt-3 col-md-2">
+                    <img style="width: 15px;" src="static/img/user.png" alt="user">
+                    <strong class="d-block text-gray-dark" style="margin-left: 10px;">{{reply.user}}</strong>
+                  </div>
+                  <div class="col-md-11">{{reply.comment}}
+                    <small class="d-block text-right mt-1">
+                      <strong>{{reply.timestamp}}</strong>
+                    </small></div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- COMMENT PARENT END REPLY SECTION -->
+        {% endfor %}
+      </div>
+      {% if user.is_authenticated %}
+      <form action="postComment" method="post">
+        {% csrf_token %}
+        <input type="text" class="form-control" name="comment" id="address2" placeholder="Comment here">
+        <input type="hidden" name="postSno" value="{{post.sno}}">
+        <input type="hidden" name="parentSno" value="{{comment.sno}}">
+        <input class="btn btn-primary card-button my-2" type="submit" value="submit">
+      </form>
+      {% else %}
+      <form>
+        <input type="text" class="form-control" id="address2" placeholder="Login to comment" disabled>
+        <input class="btn btn-primary card-button my-2" type="submit" value="Login First" disabled>
+      </form>
+      {% endif %}
+      <!-- END COMMENT PANNEL -->
+
+    </div><!-- /.blog-main -->
+
+    <aside class="col-md-4 blog-sidebar" style="margin-top: 10px;">
+      <div class="p-4 mb-3 bg-light rounded">
+        <h4 class="font-italic" style="color: white;">About</h4>
+        <p class="mb-0" style="color: #147dff;">Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis
+          consectetur purus sit
+          amet
+          fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
+      </div>
+
+      <div class="p-4">
+        <h4 class="font-italic" style="color: white;">Archives</h4>
+        <ol class="list-unstyled mb-0">
+          <li><a href="#">March 2014</a></li>
+          <li><a href="#">February 2014</a></li>
+          <li><a href="#">January 2014</a></li>
+          <li><a href="#">December 2013</a></li>
+          <li><a href="#">November 2013</a></li>
+          <li><a href="#">October 2013</a></li>
+          <li><a href="#">September 2013</a></li>
+          <li><a href="#">August 2013</a></li>
+          <li><a href="#">July 2013</a></li>
+          <li><a href="#">June 2013</a></li>
+          <li><a href="#">May 2013</a></li>
+          <li><a href="#">April 2013</a></li>
+        </ol>
+      </div>
+
+      <div class="p-4">
+        <h4 class="font-italic" style="color: white;">Elsewhere</h4>
+        <ol class="list-unstyled">
+          <li><a href="#">GitHub</a></li>
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">Facebook</a></li>
+        </ol>
+      </div>
+    </aside><!-- /.blog-sidebar -->
+
+  </div><!-- /.row -->
+
+</main>
+
+
+<!-- Footer -->
+<footer class="pt-4 my-md-5 pt-md-5 border-top footer-bot">
+  <div class="row">
+    <div class="col-12 col-md">
+      <img class="mb-2" src="{% static 'img/my-logo.jpeg' %}" alt="" width="54" height="54">
+      <small class="d-block mb-3 text-muted">© 2020-2022 by Shobhit Ranjan</small>
+    </div>
+    <div class="col-6 col-md">
+      <h5>Features</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted" href="#">Cool stuff</a></li>
+        <li><a class="text-muted" href="#">Random feature</a></li>
+        <li><a class="text-muted" href="#">Team feature</a></li>
+        <li><a class="text-muted" href="#">Stuff for developers</a></li>
+        <li><a class="text-muted" href="#">Another one</a></li>
+        <li><a class="text-muted" href="#">Last time</a></li>
+      </ul>
+    </div>
+    <div class="col-6 col-md">
+      <h5>Resources</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted" href="#">Resource</a></li>
+        <li><a class="text-muted" href="#">Resource name</a></li>
+        <li><a class="text-muted" href="#">Another resource</a></li>
+        <li><a class="text-muted" href="#">Final resource</a></li>
+      </ul>
+    </div>
+    <div class="col-6 col-md">
+      <h5>About</h5>
+      <ul class="list-unstyled text-small">
+        <li><a class="text-muted">Shobhit Ranjan<br>Kanish Sinha<br>Shubhanki Srivastava</a></li>
+        <li><a class="text-muted">Location:</a></li>
+        <li><a class="text-muted">SVIET Ramnagar Banur Punjab - 140601</a></li>
+      </ul>
+    </div>
+    <div>
+      <ul class="list-unstyled d-flex mb-0">
+        <li>
+          <a class="mr-4" role="button"><i class="fa fa-facebook"></i></a>
+        </li>
+        <li>
+          <a class="mr-4" role="button"><i class="fa fa-twitter"></i></a>
+        </li>
+        <li>
+          <a class="mr-4" role="button"><i class="fa fa-instagram"></i></a>
+        </li>
+        <li>
+          <a class="mr-4" role="button"><i class="fa fa-youtube"></i></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</footer>
+{% endblock body %}
