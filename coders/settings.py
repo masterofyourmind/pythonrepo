@@ -12,9 +12,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-import django_heroku
-import dj_database_url
-from decouple import config
+# import django_heroku
+# import dj_database_url
+# from decouple import config
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -54,7 +54,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    # 'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'coders.urls'
@@ -83,8 +83,11 @@ WSGI_APPLICATION = 'coders.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': str(os.path.join(BASE_DIR, "db.sqlite3"))
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'online_exam',
+        'USER': 'postgres',
+        'PASSWORD': 'Shobhit',
+        'HOST': 'localhost'
     }
 }
 
@@ -129,8 +132,8 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static")
 ]
 MEDIA_URL = '/media/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+# STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 #Activate Django-Heroku
-django_heroku.settings(locals())
+# django_heroku.settings(locals())
