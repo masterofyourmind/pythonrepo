@@ -19,10 +19,10 @@ from programmer import views
 from django.conf.urls import url
 from programmer.api import UserList
 
-# handler404 = 'programmer.views.custom_page_not_found_view'
-# handler500 = 'programmer.views.custom_error_view'
-# handler403 = 'programmer.views.custom_permission_denied_view'
-# handler400 = 'programmer.views.custom_bad_request_view'
+handler404 = 'programmer.views.custom_page_not_found_view'
+handler500 = 'programmer.views.custom_error_view'
+handler403 = 'programmer.views.custom_permission_denied_view'
+handler400 = 'programmer.views.custom_bad_request_view'
 
 
 urlpatterns = [
