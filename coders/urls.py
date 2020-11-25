@@ -19,15 +19,15 @@ from programmer import views
 from django.conf.urls import url
 from programmer.api import UserList
 
-handler404 = 'programmer.views.custom_page_not_found_view'
-handler500 = 'programmer.views.custom_error_view'
-handler403 = 'programmer.views.custom_permission_denied_view'
-handler400 = 'programmer.views.custom_bad_request_view'
+# handler404 = 'programmer.views.custom_page_not_found_view'
+# handler500 = 'programmer.views.custom_error_view'
+# handler403 = 'programmer.views.custom_permission_denied_view'
+# handler400 = 'programmer.views.custom_bad_request_view'
 
 
 urlpatterns = [
-    path('postComment', views.postComment, name="postComment"),
     path('admin/', admin.site.urls),
+    path('', include('programmer.urls')),
+    path('postComment', views.postComment, name="postComment"),
     url(r'^api/users_list/$', UserList.as_view(), name='user_list'),
-    path(r'^/', include('programmer.urls')),
 ]
