@@ -32,7 +32,6 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['codeinring.herokuapp.com']
 
-
 # Application definition
 
 INSTALLED_APPS = [
