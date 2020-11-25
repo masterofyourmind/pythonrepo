@@ -135,8 +135,4 @@ MEDIA_URL = '/media/'
 # STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 #Activate Django-Heroku
-<<<<<<< HEAD
 # django_heroku.settings(locals())
-=======
-django_heroku.settings(locals())
->>>>>>> c10dcb6d233cc47f36dcfc6d1f32998be3b25f6a
