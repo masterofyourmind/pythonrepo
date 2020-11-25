@@ -29,5 +29,5 @@ urlpatterns = [
     path('postComment', views.postComment, name="postComment"),
     path('admin/', admin.site.urls),
     url(r'^api/users_list/$', UserList.as_view(), name='user_list'),
-    path('/', include('programmer.urls')),
+    path(r'^/', include('programmer.urls')),
 ]
