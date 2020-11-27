@@ -11,7 +11,6 @@ import re
 from time import strftime, gmtime
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-
 # Create your views here.
 def index(request):
     allPost = Post.objects.all()
